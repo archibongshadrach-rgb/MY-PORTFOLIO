@@ -50,7 +50,7 @@ nav a{padding:2px 0;border-bottom:2px solid transparent}nav a.on{border-color:#f
 /* generic */
 .card{border-radius:28px;padding:24px}
 h2.t{font-size:30px;font-weight:800;letter-spacing:-.01em;line-height:1.1}
-.soc{display:flex;gap:12px}.soc a{width:50px;height:50px;border-radius:12px;display:grid;place-items:center;font-weight:800;color:#fff;transition:transform .2s}.soc a:hover{transform:translateY(-3px)}
+.soc{display:flex;gap:12px}.soc a{width:50px;height:50px;border-radius:12px;display:grid;place-items:center;overflow:hidden;font-weight:800;color:#fff;transition:transform .2s}.soc a:hover{transform:translateY(-3px)}.soc a img{width:22px;height:22px;display:block;object-fit:contain}
 .soc .ig{background:linear-gradient(45deg,#fdb34b,#e1306c 55%,#833ab4)}.soc .gm{background:#fff;color:#d93025;border:1px solid #ddd;font-size:22px}.soc .li{background:#0076b2}
 /* about */
 .bento{display:grid;gap:14px}
@@ -215,7 +215,7 @@ footer .wrap{padding:44px 114px 44px 114px}
 <script>
 (function(){
 var TAGS={about:'Good design is as little design as possible.',def:'Design is not just what it looks like and feels like. Design is how it works.'};
-var SOC='<a class="ig" href="https://www.instagram.com/klyr.wrk" target="_blank" rel="noopener" aria-label="Instagram">IG</a><a class="gm" href="https://mail.google.com/mail/?view=cm&to=archibongshadrach@gmail.com" target="_blank" rel="noopener" aria-label="Gmail">@</a><a class="li" href="https://www.linkedin.com/in/shadracharchibong" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>';
+var SOC='<a class="ig" href="https://www.instagram.com/klyr.wrk" target="_blank" rel="noopener" aria-label="Instagram"><img src="icons/Instagram.svg" alt="Instagram"></a><a class="gm" href="https://mail.google.com/mail/?view=cm&to=archibongshadrach@gmail.com" target="_blank" rel="noopener" aria-label="Gmail"><img src="icons/Gmail.svg" alt="Gmail"></a><a class="li" href="https://www.linkedin.com/in/shadracharchibong" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="icons/LinkedIn.svg" alt="LinkedIn"></a>';
 document.querySelectorAll('[data-soc]').forEach(function(e){e.innerHTML=SOC});
 function ph(src,ratio,label,cls){return '<div class="ph '+(cls||'')+'" style="aspect-ratio:'+ratio+'" data-l="'+label+'"><img src="images/'+src+'" alt="" loading="lazy" onerror="this.remove()"></div>'}
 var TOOLS='<span class="mtools"><i style="background:#001e36;color:#31a8ff">Ps</i><i style="background:#330000;color:#ff9a00">Ai</i><i style="background:#1e1e1e;color:#f24e1e">Fg</i><i style="background:#4a2f0d;color:#f2d46d">Cr</i></span>';
