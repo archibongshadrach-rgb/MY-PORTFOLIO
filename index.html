@@ -36,7 +36,7 @@ nav a{padding:2px 0;border-bottom:2px solid transparent}nav a.on{border-color:#f
 .pc .ph{aspect-ratio:6/7}
 .pc .lab,.pc .burst{display:none}
 .lab{background:rgba(219,209,158,.9);border-radius:14px;padding:14px 18px;font-weight:800;font-size:clamp(28px,8vw,40px);line-height:1.05;letter-spacing:-.02em;box-shadow:0 12px 30px rgba(0,0,0,.14)}
-.burst{width:84px;height:84px;background:var(--pu);color:#fff;display:grid;place-items:center;font-weight:800;font-size:26px;transform:rotate(12deg);clip-path:polygon(50% 0,60% 9%,72% 4%,76% 16%,89% 4%,94% 18%,100% 50%,94% 82%,88% 96%,76% 84%,72% 96%,60% 91%,50% 100%,40% 91%,28% 96%,24% 84%,12% 96%,6% 82%,0 50%,6% 18%,12% 4%,24% 16%,28% 4%,40% 9%)}
+.burst{width:84px;height:84px;background:var(--pu);color:#fff;display:grid;place-items:center;font-weight:800;font-size:26px;transform:rotate(12deg);clip-path:polygon(50% 0,60% 9%,72% 4%,76% 16%,89% 4%,100% 50%,89% 96%,76% 84%,72% 96%,60% 91%,50% 100%,40% 91%,28% 96%,24% 84%,11% 96%,0 50%,11% 4%,24% 16%,28% 4%,40% 9%)}
 .burst.c{background:var(--co);text-align:center;line-height:1;font-size:22px;transform:rotate(10deg);flex:none}
 .row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .acr{background:rgba(255,255,255,.55);border:3px solid #fff;border-radius:34px;padding:20px 22px;box-shadow:0 12px 30px rgba(0,0,0,.14)}
@@ -50,7 +50,7 @@ nav a{padding:2px 0;border-bottom:2px solid transparent}nav a.on{border-color:#f
 /* generic */
 .card{border-radius:28px;padding:24px}
 h2.t{font-size:30px;font-weight:800;letter-spacing:-.01em;line-height:1.1}
-.soc{display:flex;gap:12px;align-items:center}.soc a{width:28px;height:28px;border-radius:0;background:transparent;border:none;padding:0;display:grid;place-items:center;overflow:hidden;font-weight:800}.soc img{display:block;width:100%;height:100%;object-fit:contain}
+.soc{display:flex;gap:12px;align-items:center}.soc a{width:28px;height:28px;border-radius:0;background:transparent;border:none;padding:0;display:grid;place-items:center;overflow:hidden;font-weight:800;color:#fff;transition:transform .2s}.soc a:hover{transform:translateY(-2px)}.soc a img{width:100%;height:100%;display:block;object-fit:contain}
 /* about */
 .bento{display:grid;gap:14px}
 .portrait{background:var(--paper);padding:16px;border-radius:24px;box-shadow:0 10px 24px rgba(0,0,0,.12)}
@@ -59,7 +59,7 @@ h2.t{font-size:30px;font-weight:800;letter-spacing:-.01em;line-height:1.1}
 .role small{display:block;color:#ccf;font-weight:600;font-size:13px;letter-spacing:.12em;margin-bottom:10px}
 .role h1{font-size:clamp(46px,9vw,88px);line-height:.95;font-weight:800;letter-spacing:-.03em}
 .skills{background:var(--sa)}.edu{background:var(--co);color:#fff}.exp{background:var(--ink);color:#fff}
-.tools{display:flex;gap:12px;margin:18px 0 16px;flex-wrap:wrap;align-items:center}.tool{width:44px;height:44px;background:transparent;border:none;border-radius:0;padding:0;display:grid;place-items:center;overflow:hidden}.tool img{width:100%;height:100%;object-fit:contain}
+.tools{display:flex;gap:12px;margin:18px 0 16px;flex-wrap:wrap;align-items:center}.tool{width:44px;height:44px;background:transparent;border:none;border-radius:0;padding:0;display:grid;place-items:center;overflow:hidden}.tool img{display:block;width:100%;height:100%;object-fit:contain}
 .exp li{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.15);font-size:clamp(18px,3vw,24px);font-weight:500;display:flex;gap:12px;align-items:center}
 .exp li::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--co);flex:none}.exp ul{margin-top:10px}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{border-radius:24px;padding:14px 14px 18px}
@@ -91,22 +91,13 @@ h2.t{font-size:30px;font-weight:800;letter-spacing:-.01em;line-height:1.1}
 .ig,.tw,.xt{border-radius:14px;overflow:hidden;font-size:clamp(10px,1.8vw,14px)}
 .ig,.tw{background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.08)}
 .av{display:inline-block;width:1.6em;height:1.6em;border-radius:50%;background:#f4a900;flex:none}
-.ig .h,.tw .h,.xt .h{display:flex;align-items:center;gap:.7em;padding:.8em 1em;font-weight:700}
-.ig .h span,.tw .h span,.xt .h span{margin-left:auto;letter-spacing:.1em}
-.ig .img-wrap,.tw .img-wrap,.xt .img-wrap{background:#fff}
-.ig .img-wrap .ph img,.tw .img-wrap .ph img,.xt .img-wrap .ph img{object-fit:contain;object-position:center}
-.ig .actions{display:flex;align-items:center;gap:1em;padding:.8em 1em .2em;font-size:1.5em;line-height:1}
-.ig .actions em{margin-left:auto;font-style:normal}
-.ig .caption{padding:0 1em 1em}
-.ig .caption small{display:block;color:var(--mu)}
+.ig .h,.tw .h{display:flex;align-items:center;gap:.7em;padding:.8em 1em;font-weight:700}.ig .h span{margin-left:auto;letter-spacing:.1em}
+.ig .i{padding:.8em 1em .3em;display:flex;gap:1em;font-size:1.5em;line-height:1}.ig .i em{margin-left:auto;font-style:normal}.ig .c{padding:0 1em 1em}.ig .c small{display:block;color:var(--mu)}
 .tw .h b{display:block}.tw .h small{color:var(--mu);font-size:.85em}.tw .av{width:2.6em;height:2.6em}
-.tw .caption{padding:0 1em .8em;font-size:12px;color:var(--tx);line-height:1.5}
-.tw .reactions{display:flex;justify-content:space-between;align-items:center;padding:.8em 1em .4em;color:var(--mu);font-weight:600;border-top:1px solid rgba(0,0,0,.06)}
-.tw .actions{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(0,0,0,.06)}
-.tw .actions button{display:flex;justify-content:center;align-items:center;padding:.85em 0;border:none;background:#fff;color:var(--mu);font-weight:700}
-.xt{background:#000;color:#fff;padding:1em}.xt .h{margin-bottom:1em}.xt .h small{display:block;color:#71767b}.xt .av{background:#704daf}.xt .t{margin:.8em 0;line-height:1.55}.xt .t strong{display:block;margin-bottom:.45em}
+.tw .s{display:flex;gap:1.4em;padding:.8em 1em 1em;color:var(--mu);font-weight:600}
+.xt{background:#000;color:#fff;padding:1em}.xt .h{display:flex;align-items:center;gap:.7em;margin-bottom:1em}.xt .h small{display:block;color:#71767b}.xt .av{background:#704daf}.xt .t{margin:.8em 0;color:#fff;font-size:1.1em;line-height:1.5}.xt .t strong{color:#fff}.xt .s{display:flex;gap:1.4em;padding-top:.8em;border-top:1px solid rgba(255,255,255,.12);color:#c7c7c7;font-size:.9em}
 .cr small{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--mu)}.cr p{font-weight:500;margin-top:4px}
-.pager{display:flex;justify-content:space-between;gap:12px}.pager a{display:inline-flex;align-items:center;gap:14px;font-weight:600}.pager i{width:44px;height:44px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-size:28px}
+.pager{display:flex;justify-content:space-between;gap:12px}.pager a{display:inline-flex;align-items:center;gap:14px;font-weight:600}.pager i{width:44px;height:44px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center}
 .sech{background:var(--ink);color:#fff;border-radius:22px;padding:20px 28px;font-weight:800;font-size:clamp(24px,4vw,36px);letter-spacing:-.01em}
 .imgs{display:grid;gap:16px}
 .back{font-weight:600;color:var(--mu)}
@@ -165,6 +156,7 @@ footer .wrap{padding:44px 114px 44px 114px}
 </style>
 </head>
 <body>
+
 <main class="page" id="p-home">
 <div id="home-bg"><div class="wrap"><div class="stack"><i class="s1"></i><i class="s2"></i>
  <div class="folder"><div class="tape"></div>
@@ -183,7 +175,7 @@ footer .wrap{padding:44px 114px 44px 114px}
  <nav><a href="#about" data-n="about">ABOUT ME</a><a href="#works" data-n="works">MY WORKS</a></nav></div></header>
 
 <main class="page" id="p-about"><div class="wrap"><div class="bento">
- <div class="portrait"><div class="ph" data-l="YOUR PHOTO · images/photo.jpg"><img src="images/photo.jpg" alt="" onerror="this.remove()"></div><b>SHADRACH ARCHIBONG</b><small>Multi-disciplinary graphic designer creating branded experiences for culture, sports, and digital communities.</small></div>
+ <div class="portrait"><div class="ph" data-l="YOUR PHOTO · images/photo.jpg"><img src="images/photo.jpg" alt="" onerror="this.remove()"></div><b>SHADRACH ARCHIBONG</b><small>Multi-disciplinary graphic designer</small></div>
  <div class="card role"><div><small>HELLO, I’M SHADRACH ARCHIBONG</small><h1>Graphic<br>Designer</h1></div><div class="burst c">5+<br>YRS</div></div>
  <div class="pair">
   <div class="card skills"><h2 class="t">Skills</h2><div class="tools">
@@ -194,9 +186,9 @@ footer .wrap{padding:44px 114px 44px 114px}
   </div></div>
   <div class="card edu"><h2 class="t">Education</h2><p style="font-size:22px;font-weight:700;margin:16px 0 8px">BSc. Computer Science and Statistics</p><p style="color:#ffede5">University of Nigeria, Nsukka</p></div>
  </div>
- <div class="card exp"><h2 class="t">Expertise</h2><ul><li>Social Media Design</li><li>Posters &amp; Key visuals</li><li>Banner &amp; POSM design</li><li>Youtube Thumbnails</li><li>Art Direction</li><li>Brand Communication</li></ul></div>
+ <div class="card exp"><h2 class="t">Expertise</h2><ul><li>Social Media Design</li><li>Posters &amp; Key visuals</li><li>Banner &amp; POSM design</li><li>Youtube Thumbnails</li><li>Art Direction</li><li>Brand Identity</li></ul></div>
  <div class="right">
-  <div class="stats"><div class="stat" style="background:var(--paper)"><b>200+</b><span>Designs Created</span></div><div class="stat" style="background:var(--co);color:#fff"><b>50+</b><span>Projects Delivered</span></div><div class="stat" style="background:var(--sa)"><b>100+</b><span>Brand &amp; Social Assets</span></div></div>
+  <div class="stats"><div class="stat" style="background:var(--paper)"><b>200+</b><span>Designs Created</span></div><div class="stat" style="background:var(--co);color:#fff"><b>50+</b><span>Projects Finished</span></div><div class="stat" style="background:#f0efe8"><b>5+</b><span>Years Experience</span></div></div>
   <div class="card contact"><h2 class="t" style="font-size:40px">Let’s Connect</h2><div class="soc" data-soc></div></div>
  </div>
 </div></div></main>
@@ -222,28 +214,20 @@ footer .wrap{padding:44px 114px 44px 114px}
 <script>
 (function(){
 var TAGS={about:'Good design is as little design as possible.',def:'Design is not just what it looks like and feels like. Design is how it works.'};
-var SOC='<a class="ig" href="https://www.instagram.com/klyr.wrk" target="_blank" rel="noopener" aria-label="Instagram"><img src="icons/Instagram.svg" alt="Instagram"></a><a class="gm" href="https://mail.google.com/mail/?view=cm&to=archibongshadrach@gmail.com" target="_blank" rel="noopener" aria-label="Gmail"><img src="icons/Gmail.svg" alt="Gmail"></a><a class="in" href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="icons/LinkedIn.svg" alt="LinkedIn"></a>';
+var SOC='<a class="ig" href="https://www.instagram.com/klyr.wrk" target="_blank" rel="noopener" aria-label="Instagram"><img src="icons/Instagram.svg" alt="Instagram"></a><a class="gm" href="https://mail.google.com/mail/?view=cm&to=archibongshadrach@gmail.com" target="_blank" rel="noopener" aria-label="Gmail"><img src="icons/Gmail.svg" alt="Gmail"></a><a class="li" href="https://www.linkedin.com/in/shadracharchibong" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="icons/LinkedIn.svg" alt="LinkedIn"></a>';
 document.querySelectorAll('[data-soc]').forEach(function(e){e.innerHTML=SOC});
 function ph(src,ratio,label,cls){return '<div class="ph '+(cls||'')+'" style="aspect-ratio:'+ratio+'" data-l="'+label+'"><img src="images/'+src+'" alt="" loading="lazy" onerror="this.remove()"></div>'}
-var TOOLS='<span class="mtools"><i style="background:#001e36;color:#31a8ff">Ps</i><i style="background:#330000;color:#ff9a00">Ai</i><i style="background:#1e1e1e;color:#f24e1e">Fg</i><i style="background:#2b2b2b;color:#ff7f50">Cd</i><i style="background:#3d2b0d;color:#f3c13a">Cr</i></span>';
+var TOOLS='<span class="mtools"><i style="background:#001e36;color:#31a8ff">Ps</i><i style="background:#330000;color:#ff9a00">Ai</i><i style="background:#1e1e1e;color:#f24e1e">Fg</i><i style="background:#4a2f0d;color:#f2d46d">Cr</i></span>';
 var P={
-ideliver:{t:'iDELIVER',k:'ideliver',s:'iDeliver required greater visibility and orders. By creating a consistent, user-focused look for campaigns, I achieved over 54,500 views, 754 link clicks, and a 605% rise in interactions.',m:['Ad Campaigns · Social Assets','Lead Designer'],c:['#f9a404','#251a00','#f7cf5c','#251a00'],prev:null,next:'ton',sec:[['Campaign system',[['1/1','1/1'],['1/1','1/1'],['1/1','1/1']]],['Brand touchpoints',[['1/1','1/1'],['1/1','1/1']]]]},
-ton:{t:'TON Sports',k:'ton',s:'TON Sports needed stronger visibility and audience engagement. By creating football-focused graphics and matchday content, I helped generate 1.6K views, reach 546 unique users, and build a stronger matchday identity.',m:['Matchday Posters · Social Design','Art Direction'],c:['#ed1b24','#fff','#f7b3a4','#4a0d0a'],prev:'ideliver',next:'kvltvh',sec:[['Matchday graphics',[['1/1','1/1'],['1/1','1/1'],['1/1','1/1']]],['Fan engagement',[['1/1','1/1'],['1/1','1/1']]]]},
-kvltvh:{t:'KVLTVH',k:'kvltvh',s:'KVLTVH aimed to amplify emerging artists through music promotion and entertainment content. By creating engaging graphics and consistent social media posts, I helped boost visibility and support the brand’s online presence.',m:['Artist Promotion · Campaign Design','Creative Lead'],c:['#ffcc00','#171717','#f7d96d','#171717'],prev:'ton',next:'bybata',sec:[['Launch visuals',[['1/1','1/1'],['1/1','1/1'],['1/1','1/1']]],['Campaign assets',[['1/1','1/1'],['1/1','1/1']]]]},
-bybata:{t:'Bybata',k:'bybata',s:'BYBATA needed a clear, engaging brand identity to communicate its mission. Through user-focused visual design and brand communication, I helped present its vision of building a stronger digital experience for users.',m:['Brand System · Creative Assets','Brand Design'],c:['#704daf','#fff','#d8c7ff','#2d184b'],prev:'kvltvh',next:'other',sec:[['Brand storytelling',[['1/1','1/1'],['1/1','1/1'],['1/1','1/1']]],['Social visuals',[['1/1','1/1'],['1/1','1/1']]]]},
-other:{t:'Other Projects',k:'other',s:'Across projects like Truefit Atelier, UNIPOD, and Sakai, I created brand-focused visuals, social media designs, print flyers, and a restaurant menu to enhance brand communication across diverse audiences.',m:['Print · Social · Packaging','Concept & Delivery'],c:['#d7c59d','#1d1d1d','#ece0b9','#1d1d1d'],prev:'bybata',next:null,sec:[['Brand and lifestyle visuals',[['1/1','1/1'],['1/1','1/1'],['1/1','1/1']]],['Print and food graphics',[['1/1','1/1'],['1/1','1/1']]]]} };
+ideliver:{t:'iDELIVER',k:'ideliver',s:'iDeliver required greater visibility and orders. By creating a consistent, user-focused look for campaigns, I achieved over 54,500 views, 754 link clicks, and a substantial rise in conversions.',m:['Campaign design & social assets','Art Direction + Design'],c:['#f9a404','#121212','#fbe0a8','#121212'],prev:null,next:'ton'},
+ton:{t:'TON Sports',k:'ton',s:'TON Sports needed stronger visibility and audience engagement. By creating football-focused graphics and matchday content, I helped generate 1.6K views, reach 546 unique users, and build a stronger community around the brand.',m:['Matchday graphics & promotions','Lead visual design'],c:['#ed1b24','#fff','#fbdad9','#121212'],prev:'ideliver',next:'kvltvh'},
+kvltvh:{t:'KVLTVH',k:'kvltvh',s:'KVLTVH aimed to amplify emerging artists through music promotion and entertainment content. By creating engaging graphics and consistent social media posts, I helped build traction and promote new music releases effectively.',m:['Social media visuals','Content design'],c:['#ffcc00','#121212','#fff2b8','#121212'],prev:'ton',next:'bybata'},
+bybata:{t:'Bybata',k:'bybata',s:'BYBATA needed a clear, engaging brand identity to communicate its mission. Through user-focused visual design and brand communication, I helped present its vision of bold, impactful growth in a more compelling way.',m:['Brand communication','Visual identity'],c:['#704daf','#fff','#efe3ff','#121212'],prev:'kvltvh',next:null},
+other:{t:'Other Projects',k:'other',s:'Across projects like Truefit Atelier, UNIPOD, and Sakai, I created brand-focused visuals, social media designs, print flyers, and a restaurant menu to enhance brand presence and communication.',m:['Brand graphics','Creative support'],c:['#d97061','#fff','#fce1db','#121212'],prev:null,next:null}}
 function post(p,i){var n=i+1,img=ph(p.k+'-'+n+'.jpg','1/1','images/'+p.k+'-'+n+'.jpg');
- if(p.kind==='ig'){
-   var name=(p.k==='ideliver')?'iDELIVER':(p.k==='kvltvh')?'KVLTVH':'[brand]';
-   var handle=(p.k==='ideliver')?'[ideliver_handle]':(p.k==='kvltvh')?'[kvltvh_handle]':'[handle]';
-   return '<div class="ig"><div class="h"><i class="av"></i><div><b>'+name+'</b><small>'+handle+'</small></div><span>•••</span></div><div class="img-wrap">'+img+'</div><div class="actions">♥ ◯ ➤<em>🔖</em></div><div class="caption"><b>'+name+'</b><small>View all 145 comments</small></div></div>';
- }
- if(p.kind==='tw'){
-   var d=p.d[i];
-   return '<div class="tw"><div class="h"><i class="av"></i><div><b>TON Sports</b><small>2h • 🌍 • [ton_handle]</small></div></div><div class="caption">'+d[1]+'</div><div class="img-wrap">'+ph(p.k+'-'+n+'.jpg','1/1','images/'+p.k+'-'+n+'.jpg')+'</div><div class="reactions"><span>👍 1.2K</span><span>245 comments</span><span>32 shares</span></div><div class="actions"><button>Like</button><button>Comment</button><button>Share</button></div></div>';
- }
- return '<div class="xt"><div class="h"><i class="av"></i><div><b>Bybata</b><small>@bybata_</small></div></div><div class="img-wrap">'+ph(p.k+'-'+n+'.jpg','353/444','images/'+p.k+'-'+n+'.jpg')+'</div><div class="t"><strong>Launch campaign</strong><span>Creative direction for social content and product storytelling.</span></div></div>';
-}
+ if(p.kind==='ig')return '<div class="ig"><div class="h"><i class="av"></i>'+p.h+'<span>•••</span></div>'+img+'<div class="i">♥ ◯ ➤<em>⚑</em></div><div class="c"><b>'+p.h+'</b><small>View post</small></div></div>';
+ if(p.kind==='tw'){var d=p.d[i];return '<div class="tw"><div class="h"><i class="av"></i><div><b>TON Sports</b><small>'+d[0]+' • 🌍</small></div></div>'+ph(p.k+'-'+n+'.jpg','386/450','images/'+p.k+'-'+n+'.jpg')+'<div class="s"><span>❤ '+d[1]+'</span><span>↻ '+d[2]+'</span><span>✉ '+d[3]+'</span></div></div>'};
+ return '<div class="xt"><div class="h"><i class="av"></i><div><b>Bybata ✓</b><small>@bybata_</small></div></div>'+ph(p.k+'-'+n+'.jpg','353/444','images/'+p.k+'-'+n+'.jpg')+'<div class="t"><strong>Elevating the brand experience</strong></div><div class="s"><span>♥ 650</span><span>↻ 102</span><span>✉ 14</span></div></div>'}
 function render(h){var p=P[h],o='',c=p.c;
  o+='<a class="back" href="#works">← All works</a><div class="chead"><div><h1>'+p.t+'</h1><p class="lead">'+p.s+'</p></div><div class="meta">'
  +'<div style="background:'+c[0]+';color:'+c[1]+'"><small>DELIVERABLES</small>'+p.m[0]+'</div><div style="background:'+c[2]+';color:'+c[3]+'"><small>ROLE</small>'+p.m[1]+'</div></div></div>';
@@ -252,8 +236,8 @@ function render(h){var p=P[h],o='',c=p.c;
  o+='<div class="cr"><small>CREDITS</small><p>Art Direction · Lead Design · Support Design</p></div>';
  o+='<div class="pager">'+(p.prev?'<a href="#'+p.prev+'"><i>‹</i>Previous Page</a>':'<span></span>' )+(p.next?'<a href="#'+p.next+'">Next Page<i>›</i></a>':'<span></span>')+'</div>';
  document.getElementById('proj').innerHTML=o}
-var F=[['ideliver','iDELIVER','Branding','2026','#f9a404'],['ton','TON SPORTS','Branding','2026','#ed1b24'],['kvltvh','KVLTVH','Branding','2024','#ffcc00'],['bybata','BYBATA','Branding','2026','#704daf'],['other','OTHER PROJECTS','Creative Work','2025','#d7c59d']];
-document.getElementById('folders').innerHTML=F.map(function(f){return '<a class="fold" href="#'+f[0]+'"><div class="f"><i class="tab"></i><i class="back"></i><i class="paper"></i><i class="front"></i><i class="tag" style="background:'+f[4]+'">'+f[3]+'</i></div><h3>'+f[1]+'</h3><p>'+f[2]+'</p></a>'}).join('');
+var F=[['ideliver','iDELIVER','Branding','2026','#f9a404'],['ton','TON SPORTS','Branding','2026','#ed1b24'],['kvltvh','KVLTVH','Branding','2024','#ffcc00'],['bybata','BYBATA','Branding','2026','#704daf']];
+document.getElementById('folders').innerHTML=F.map(function(f){return '<a class="fold" href="#'+f[0]+'"><div class="f"><i class="tab"></i><i class="back"></i><i class="paper"></i><i class="front"></i><i class="tag" style="background:'+f[4]+'">'+f[1].slice(0,3).toUpperCase()+'</i></div><h3>'+f[1]+'</h3><p>'+f[2]+' · '+f[3]+'</p></a>'}).join('');
 function route(){
  var h=(location.hash||'#home').slice(1);if(h!=='home'&&h!=='about'&&h!=='works'&&!P[h])h='home';
  var pg=P[h]?'proj':h;
