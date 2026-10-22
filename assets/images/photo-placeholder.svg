@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="1100" viewBox="0 0 900 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1100" rx="42" fill="#F0E9D8"/>
+  <rect x="80" y="80" width="740" height="940" rx="28" fill="#F9F6F2"/>
+  <circle cx="450" cy="430" r="205" fill="#D8D0BF"/>
+  <path d="M329 730C346 646 390 598 450 598C510 598 554 646 571 730V770H329V730Z" fill="#1A1A1A"/>
+  <path d="M390 415C390 360.106 432.106 318 487 318H510C564.894 318 607 360.106 607 415V510H390V415Z" fill="#1A1A1A"/>
+  <path d="M450 260C382.714 260 328 314.714 328 382V415C328 482.286 382.714 537 450 537C517.286 537 572 482.286 572 415V382C572 314.714 517.286 260 450 260Z" fill="#D97061"/>
+  <rect x="210" y="840" width="480" height="88" rx="18" fill="#D97061"/>
+  <text x="450" y="893" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="700" fill="#FFFFFF">Shadrach</text>
+</svg>
