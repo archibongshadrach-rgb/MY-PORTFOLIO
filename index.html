@@ -1,124 +1,707 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shadrach Archibong | Graphic Designer</title>
-    <meta
-      name="description"
-      content="Graphic designer portfolio for Shadrach Archibong, featuring branding, campaigns, and digital design work."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <a href="#home" class="brand">Shadrach’s Portfolio</a>
-        <nav aria-label="Main navigation" class="main-nav">
-          <a href="#about">About</a>
-          <a href="#works">Works</a>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Shadrach Archibong · Graphic Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f5f0;
+      --paper: #ede8d6;
+      --ink: #1a1a1a;
+      --pu: #4a40e0;
+      --co: #d97061;
+      --sa: #c7c4ad;
+      --mu: #808078;
+      --fg: #bfbfb8;
+      --tx: #404040;
+      --man: #c7bd94;
+      --white: #fff;
+      --shadow: rgba(0,0,0,0.14);
+      --dark-text: #1d1d1d;
+      --line: rgba(128,128,120,.4);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    h1,h2,h3,h4,p,ul { margin: 0; }
+    ul { padding: 0; list-style: none; }
+    .wrap { width: 100%; max-width: 1440px; margin: 0 auto; padding: 20px; }
+    .page { display: none; }
+    .page.on { display: block; animation: in .35s ease; }
+    @keyframes in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+    .ph {
+      position: relative;
+      overflow: hidden;
+      background: #cdd6df;
+      display: grid;
+      place-items: center;
+      color: #76818c;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-align: center;
+    }
+    .ph::before { content: attr(data-l); }
+    .ph img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    header {
+      background: var(--ink);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding-top: env(safe-area-inset-top, 0px);
+    }
+    header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+    .brand { font-weight: 700; font-size: 17px; }
+    nav {
+      display: flex;
+      gap: 14px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    nav a {
+      padding: 2px 0;
+      border-bottom: 2px solid transparent;
+    }
+    nav a.on { border-color: #fff; }
+
+    #home-bg {
+      background: #ededeb;
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+    }
+    .stack {
+      position: relative;
+      margin-top: 30px;
+    }
+    .folder > *, .bento > *, .pair > *, .right > * { min-width: 0; }
+    .stack .s1, .stack .s2 { position: absolute; border-radius: 16px; display: none; }
+    .folder {
+      position: relative;
+      background: var(--paper);
+      border-radius: 24px;
+      padding: 18px;
+      display: grid;
+      gap: 22px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.14);
+    }
+    .tape { display: none; position: absolute; left: 5%; top: 20px; width: 90px; height: 75%; background: rgba(199,196,173,.8); border-radius: 6px; }
+    .pc {
+      position: relative;
+      background: #fff;
+      padding: 12px;
+      border-radius: 4px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.14);
+    }
+    .pc .ph { aspect-ratio: 6/7; }
+    .pc .lab, .pc .burst { display: none; }
+    .lab {
+      background: rgba(219,209,158,.9);
+      border-radius: 14px;
+      padding: 14px 18px;
+      font-weight: 800;
+      font-size: clamp(28px,8vw,40px);
+      line-height: 1.05;
+      letter-spacing: -.02em;
+      box-shadow: 0 12px 30px rgba(0,0,0,.14);
+    }
+    .burst {
+      width: 84px;
+      height: 84px;
+      background: var(--pu);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 26px;
+      transform: rotate(12deg);
+      clip-path: polygon(50% 0,60% 9%,72% 4%,76% 16%,89% 1%,95% 28%,100% 50%,90% 68%,96% 84%,82% 90%,74% 100%,50% 92%,33% 100%,25% 88%,10% 90%,4% 76%,0 50%,8% 26%,14% 14%,28% 18%,38% 5%);
+    }
+    .burst.c {
+      background: var(--co);
+      text-align: center;
+      line-height: 1;
+      font-size: 22px;
+      transform: rotate(10deg);
+      flex: none;
+    }
+    .row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .acr {
+      background: rgba(255,255,255,.55);
+      border: 3px solid #fff;
+      border-radius: 34px;
+      padding: 20px 22px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.14);
+    }
+    .acr b { display: block; font-weight: 800; }
+    .acr .a { font-size: clamp(22px,6vw,54px); letter-spacing: -.01em; line-height: 1.15; }
+    .acr .b { font-size: clamp(34px,10.5vw,110px); letter-spacing: -.03em; line-height: 1.05; }
+    .menu { margin-top: 26px; }
+    .menu h3 { color: var(--co); font-size: 22px; font-weight: 700; border-bottom: 4px solid var(--co); display: inline-block; margin-bottom: 6px; }
+    .menu p { font-size: 14px; margin-bottom: 6px; }
+    .menu a {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(128,128,120,.4);
+      font-weight: 700;
+      font-size: clamp(17px,4.5vw,24px);
+      transition: padding .2s;
+    }
+    .menu a::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--mu); flex: none; }
+    .menu a::after { content: "→"; margin-left: auto; color: var(--pu); }
+    .menu a:hover { padding-left: 8px; }
+
+    .card { border-radius: 28px; padding: 24px; }
+    h2.t { font-size: 30px; font-weight: 800; letter-spacing: -.01em; line-height: 1.1; }
+    .soc { display: flex; gap: 12px; }
+    .soc a {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      color: #fff;
+      transition: transform .2s;
+    }
+    .soc a:hover { transform: translateY(-3px); }
+    .soc .ig { background: linear-gradient(45deg,#fdb34b,#e1306c 55%,#833ab4); }
+    .soc .gm { background: #fff; color: #d93025; border: 1px solid #ddd; font-size: 22px; }
+    .soc .li { background: #0076b2; }
+
+    .bento { display: grid; gap: 14px; }
+    .portrait {
+      background: var(--paper);
+      padding: 16px;
+      border-radius: 24px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.12);
+    }
+    .portrait .ph { aspect-ratio: 34/42; border-radius: 6px; }
+    .portrait b { display: block; margin-top: 12px; font-size: 20px; }
+    .portrait small { color: var(--mu); font-size: 14px; }
+    .role {
+      background: var(--pu);
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 12px;
+    }
+    .role small {
+      display: block;
+      color: #ccf;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: .12em;
+      margin-bottom: 10px;
+    }
+    .role h1 { font-size: clamp(46px,9vw,88px); line-height: .95; font-weight: 800; letter-spacing: -.03em; }
+    .skills { background: var(--sa); }
+    .edu { background: var(--co); color: #fff; }
+    .exp { background: var(--ink); color: #fff; }
+    .tools { display: flex; gap: 10px; margin: 18px 0 16px; flex-wrap: wrap; }
+    .tool {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: -.03em;
+    }
+    .exp li {
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,.15);
+      font-size: clamp(18px,3vw,24px);
+      font-weight: 500;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .exp li::before { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--co); flex: none; }
+    .exp ul { margin-top: 10px; }
+    .stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+    .stat {
+      border-radius: 24px;
+      padding: 14px 14px 18px;
+    }
+    .stat b {
+      display: block;
+      font-size: clamp(32px,6vw,60px);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      line-height: 1.2;
+    }
+    .stat span { font-size: clamp(11px,1.6vw,15px); font-weight: 500; }
+    .contact { background: var(--paper); }
+    .contact .soc { margin-top: 18px; }
+
+    .wgrid { display: grid; gap: 24px; }
+    .wside {
+      background: #fff;
+      border-radius: 20px;
+      padding: 16px;
+      display: grid;
+      gap: 18px;
+    }
+    .wside .ph { aspect-ratio: 28/29; border-radius: 10px; }
+    .wside h4 { font-size: 13px; font-weight: 700; letter-spacing: .1em; margin-bottom: 10px; }
+    .wside p { font-size: 13px; line-height: 1.55; color: var(--tx); margin-bottom: 10px; }
+    .folders { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px 14px; }
+    .fold { display: block; cursor: pointer; transition: transform .25s; }
+    .fold:hover { transform: translateY(-6px); }
+    .fold .f { position: relative; aspect-ratio: 240/190; margin-bottom: 14px; }
+    .fold .f i { position: absolute; display: block; }
+    .fold .tab { left: 0; top: 0; width: 41.7%; height: 21%; background: var(--man); border-radius: 12px; }
+    .fold .back { left: 0; top: 9.5%; right: 0; bottom: 0; background: var(--man); border-radius: 16px; }
+    .fold .paper { left: 7.5%; right: 7.5%; top: 18%; height: 63%; background: #fff; border-radius: 6px; }
+    .fold .front { left: 0; right: 0; top: 29.5%; bottom: 0; background: var(--paper); border-radius: 16px; box-shadow: 0 12px 30px rgba(0,0,0,.14); }
+    .fold .tag { left: 7.5%; top: 41%; width: 40%; text-align: center; padding: 5px 0; border-radius: 14px; color: #fff; font-size: 13px; font-weight: 700; }
+    .fold h3 { font-size: 16px; font-weight: 700; }
+    .fold p { font-size: 13px; color: var(--mu); }
+
+    .case h1 { font-size: clamp(52px,10vw,76px); font-weight: 800; letter-spacing: -.04em; line-height: 1.1; }
+    .case .lead { font-size: clamp(15px,2.4vw,20px); line-height: 1.5; color: var(--tx); max-width: 640px; margin-top: 14px; }
+    .chead { display: grid; gap: 24px; }
+    .meta { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .meta div { border-radius: 22px; padding: 18px 22px; font-weight: 700; font-size: clamp(16px,3vw,22px); min-height: 92px; }
+    .meta small { display: block; font-size: 12px; letter-spacing: .12em; margin-bottom: 8px; }
+    .mtools{ display:flex; gap:10px; flex-wrap:wrap; }
+    .mtools i{ font-style:normal; width:27px; height:27px; border-radius:7px; display:grid; place-items:center; font-size:12px; font-weight:800; }
+    .posts{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:8px; }
+    .ig,.tw,.xt { border-radius:14px; overflow:hidden; font-size:clamp(10px,1.8vw,14px); }
+    .ig,.tw { background:#fff; box-shadow:0 6px 18px rgba(0,0,0,.08); }
+    .av { display:inline-block; width:1.6em; height:1.6em; border-radius:50%; background:#f4a900; flex:none; }
+    .ig .h,.tw .h { display:flex; align-items:center; gap:.7em; padding:.8em 1em; font-weight:700; }
+    .ig .h span { margin-left:auto; letter-spacing:.1em; }
+    .ig .i { padding:.8em 1em .3em; display:flex; gap:1em; font-size:1.5em; line-height:1; }
+    .ig .i em { margin-left:auto; font-style:normal; }
+    .ig .c { padding:0 1em 1em; }
+    .ig .c small { display:block; color:var(--mu); }
+    .tw .h b { display:block; }
+    .tw .h small { color:var(--mu); font-size:.85em; }
+    .tw .av { width:2.6em; height:2.6em; }
+    .tw .s { display:flex; gap:1.4em; padding:.8em 1em 1em; color:var(--mu); font-weight:600; }
+    .xt{ background:#000; color:#fff; padding:1em; }
+    .xt .h{ display:flex; align-items:center; gap:.7em; margin-bottom:1em; }
+    .xt .h small { display:block; color:#71767b; }
+    .xt .av { background:#704daf; }
+    .xt .t{ margin:.8em 0; color:#f4f4f4; line-height:1.5; }
+    .xt .c{ color:#71767b; }
+    .cr small { font-size: 12px; font-weight: 700; letter-spacing: .12em; color: var(--mu); }
+    .cr p { font-weight: 500; margin-top: 4px; }
+    .pager { display:flex; justify-content:space-between; gap:12px; }
+    .pager a { display:inline-flex; align-items:center; gap:14px; font-weight:600; }
+    .pager i { width:44px; height:44px; border:2px solid var(--ink); border-radius:50%; display:grid; place-items:center; font-style:normal; font-size:26px; }
+    .sech { background: var(--ink); color: #fff; border-radius: 22px; padding: 20px 28px; font-weight: 800; font-size: clamp(24px,4vw,36px); letter-spacing: -.01em; }
+    .imgs { display:grid; gap:16px; }
+    .back { font-weight: 600; color: var(--mu); }
+
+    footer { background: var(--ink); color: #fff; margin-top: 30px; }
+    footer .wrap { display:grid; gap:28px; padding:40px 24px; }
+    footer h2 { font-size: clamp(30px,4vw,36px); font-weight: 800; letter-spacing: -.01em; line-height: 1.05; }
+    footer p.tg { color: var(--fg); font-size: 14px; margin-top:14px; max-width: 340px; }
+    footer .ls { display:grid; gap:16px; font-size:20px; font-weight:500; }
+    footer .ls a::before { content:"→"; margin-right:14px; }
+    footer .cn { display:grid; gap:12px; font-weight:600; }
+
+    @media (min-width:700px){
+      .wrap{ padding:40px; }
+      .brand{ font-size:22px; }
+      nav{ font-size:15px; gap:28px; }
+      .folder{ grid-template-columns:300px 1fr; padding:28px; gap:30px; align-items:start; }
+      .acr .a{ font-size:3.4vw; }
+      .acr .b{ font-size:6.2vw; }
+      .bento{ grid-template-columns:270px 1fr; }
+      .pair{ grid-column:1/-1; display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+      .wide{ grid-column:1/-1; }
+      .card{ padding:28px; }
+      .tool{ width:64px; height:64px; }
+      .wside{ grid-template-columns:220px 1fr; padding:20px; }
+      .folders{ grid-template-columns:repeat(3,1fr); gap:20px 17px; }
+      .chead{ grid-template-columns:1fr; }
+      .meta{ gap:12px; }
+      .imgs.two{ grid-template-columns:1fr 1fr; }
+      .posts{ gap:16px; }
+      footer .wrap{ grid-template-columns:1fr auto auto; gap:48px; padding:40px; }
+    }
+
+    @media (min-width:1100px){
+      .wrap{ padding:60px; }
+      .stack{ margin:30px 40px 0; }
+      .stack .s1{ display:block; left:60px; right:60px; top:-60px; bottom:30px; background:#f7f5eb; }
+      .stack .s2{ display:block; left:40px; right:-20px; top:-30px; bottom:-20px; background:#d6d49e; }
+      .folder{ grid-template-columns:420px 1fr; padding:44px 60px 44px 90px; gap:70px; min-height:600px; align-items:center; border-radius:20px; }
+      .tape{ display:block; }
+      .pc{ margin-left:30px; }
+      .pc .lab, .pc .burst{ display:grid; }
+      .pc .lab{ position:absolute; left:-60px; bottom:-20px; display:block; }
+      .pc .burst{ position:absolute; right:-70px; top:-40px; width:150px; height:150px; font-size:44px; }
+      .info > .row{ display:none; }
+      .acr{ transform:rotate(-4deg); padding:36px 44px; margin-left:-30px; }
+      .acr .a{ font-size:clamp(40px,3.75vw,54px); }
+      .acr .b{ font-size:clamp(70px,7.4vw,110px); }
+      .menu{ margin-top:40px; }
+      .menu a, .menu p{ max-width:560px; }
+      .bento{ grid-template-columns:400px 1fr 1fr 1fr; }
+      .bento .portrait{ grid-row:1/3; }
+      .role{ grid-column:2/5; padding:36px 40px; }
+      .role .burst{ width:170px; height:170px; font-size:34px; }
+      .pair{ display:contents; }
+      .skills{ grid-column:2/3; }
+      .edu{ grid-column:3/5; }
+      .exp{ grid-column:1/3; }
+      .right{ grid-column:3/5; display:grid; gap:14px; align-content:start; }
+      .stat{ padding:22px; }
+      .wgrid{ grid-template-columns:280px 1fr; gap:60px; align-items:start; }
+      .wside{ grid-template-columns:1fr; position:sticky; top:100px; }
+      .wmain{ border-left:1px solid rgba(128,128,120,.4); padding-left:60px; }
+      .folders{ grid-template-columns:repeat(3,240px); gap:40px 80px; }
+      .chead{ grid-template-columns:1fr 600px; gap:60px; align-items:start; }
+      .meta{ gap:18px 20px; }
+      .posts{ grid-template-columns:repeat(3,1fr); gap:50px 80px; }
+      .ig,.tw,.xt{ font-size:14px; }
+      .imgs.two{ gap:20px; }
+      footer .wrap{ padding:44px 114px; }
+    }
+
+    @media (prefers-reduced-motion:reduce){ *{ animation:none !important; transition:none !important; scroll-behavior:auto; } }
+  </style>
+</head>
+<body>
+  <main class="page" id="p-home">
+    <div id="home-bg">
+      <div class="wrap">
+        <div class="stack">
+          <i class="s1"></i>
+          <i class="s2"></i>
+          <div class="folder">
+            <div class="tape"></div>
+            <div class="pc">
+              <div class="ph" data-l="YOUR PHOTO · images/photo.jpg">
+                <img src="images/photo.jpg" alt="Shadrach Archibong" onerror="this.remove()">
+              </div>
+              <div class="lab">GRAPHIC<br>DESIGN</div>
+              <div class="burst">HI!</div>
+            </div>
+            <div class="info">
+              <div class="acr"><b class="a">THIS IS MY</b><b class="b">PORTFOLIO</b></div>
+              <div class="row" style="margin-top:22px">
+                <div class="lab">GRAPHIC<br>DESIGN</div>
+                <div class="burst">HI!</div>
+              </div>
+              <div class="menu">
+                <h3>FILE INCLUDES</h3>
+                <p>Click each section for more details</p>
+                <a href="#about">ABOUT ME</a>
+                <a href="#works">MY WORKS</a>
+                <a href="#about">LET’S CONNECT</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="shell" hidden>
+    <header>
+      <div class="wrap">
+        <a class="brand" href="#home">Shadrach’s Portfolio</a>
+        <nav>
+          <a href="#about" data-n="about">ABOUT ME</a>
+          <a href="#works" data-n="works">MY WORKS</a>
         </nav>
       </div>
     </header>
 
-    <main>
-      <section id="home" class="hero section">
-        <div class="container hero-grid">
-          <div class="hero-visual">
-            <div class="photo-frame">
-              <img src="assets/images/photo-placeholder.svg" alt="Shadrach Archibong portrait" />
+    <main class="page" id="p-about">
+      <div class="wrap">
+        <div class="bento">
+          <div class="portrait">
+            <div class="ph" data-l="YOUR PHOTO · images/photo.jpg"><img src="images/photo.jpg" alt="" onerror="this.remove()"></div>
+            <b>SHADRACH ARCHIBONG</b>
+            <small>Multi-disciplinary graphic designer</small>
+          </div>
+
+          <div class="card role">
+            <div>
+              <small>HELLO, I’M SHADRACH ARCHIBONG</small>
+              <h1>Graphic<br>Designer</h1>
             </div>
+            <div class="burst c">5+<br>YRS</div>
           </div>
 
-          <div class="hero-copy">
-            <p class="eyebrow">Graphic Designer</p>
-            <h1>Designing bold visuals that move culture, brands, and attention.</h1>
-            <p class="lead">
-              I create compelling branding, campaign graphics, and social-first visuals that help ideas stand out and connect with people.
-            </p>
-            <div class="cta-row">
-              <a class="button primary" href="#works">View my work</a>
-              <a class="button secondary" href="#about">About me</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="section muted-section">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow accent">About me</p>
-            <h2>Creative direction with a strategic eye.</h2>
-          </div>
-
-          <div class="about-grid">
-            <article class="info-card profile-card">
-              <p id="profile-bio"></p>
-              <div class="mini-meta">
-                <span>5+ years</span>
-                <span>Branding</span>
-                <span>Campaign Design</span>
+          <div class="pair">
+            <div class="card skills">
+              <h2 class="t">Skills</h2>
+              <div class="tools">
+                <span class="tool" style="background:#001e36;color:#31a8ff">Ps</span>
+                <span class="tool" style="background:#330000;color:#ff9a00">Ai</span>
+                <span class="tool" style="background:#1e1e1e;color:#f24e1e">Fg</span>
+                <span class="tool" style="background:#2b2b2b;color:#ff7f50">Id</span>
+                <span class="tool" style="background:#3d2b0d;color:#f3c13a">Cr</span>
               </div>
-            </article>
+            </div>
 
-            <article class="info-card">
-              <h3>Skills</h3>
-              <div class="tool-grid" id="skills-grid"></div>
-            </article>
-
-            <article class="info-card accent-card">
-              <h3>Education</h3>
-              <p>BSc. Computer Science and Statistics</p>
-              <small>University of Nigeria</small>
-            </article>
-
-            <article class="info-card dark-card">
-              <h3>Expertise</h3>
-              <ul class="check-list" id="expertise-list"></ul>
-            </article>
+            <div class="card edu">
+              <h2 class="t">Education</h2>
+              <p style="font-size:22px;font-weight:700;margin:16px 0 8px">BSc. Computer Science and Statistics</p>
+              <p style="color:#ffede5">University of Nigeria, Nsukka</p>
+            </div>
           </div>
 
-          <div class="stats-grid" id="stats-grid"></div>
-        </div>
-      </section>
-
-      <section id="works" class="section">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow accent">Selected work</p>
-            <h2>Brand systems and campaigns that perform.</h2>
+          <div class="card exp">
+            <h2 class="t">Expertise</h2>
+            <ul>
+              <li>Social Media Design</li>
+              <li>Posters &amp; Key visuals</li>
+              <li>Banner &amp; POSM design</li>
+              <li>Youtube Thumbnails</li>
+              <li>Art Direction</li>
+            </ul>
           </div>
-          <div id="project-grid" class="project-grid" aria-live="polite"></div>
+
+          <div class="right">
+            <div class="stats">
+              <div class="stat" style="background:var(--paper)"><b>200+</b><span>Designs Created</span></div>
+              <div class="stat" style="background:var(--co);color:#fff"><b>50+</b><span>Projects Finished</span></div>
+              <div class="stat" style="background:var(--sa)"><b>100+</b><span>Brand Assets</span></div>
+            </div>
+            <div class="card contact">
+              <h2 class="t" style="font-size:40px">Let’s Connect</h2>
+              <div class="soc" data-soc></div>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div>
-          <h3>Shadrach’s<br />Portfolio</h3>
-          <p class="footer-tagline">Good design creates clarity, feeling, and momentum.</p>
+    <main class="page" id="p-works">
+      <div class="wrap">
+        <div class="wgrid">
+          <aside class="wside">
+            <div class="ph" data-l="YOUR PHOTO · images/photo.jpg"><img src="images/photo.jpg" alt="" onerror="this.remove()"></div>
+            <div>
+              <h4>PROJECTS &amp; ACHIEVEMENTS</h4>
+              <p>• 100+ Projects Executed: Album art, campaigns, matchday graphics and social content.</p>
+              <p>• Art Direction &amp; Leadership: Visual identities and design systems for iDeliver, TON Sports, KVLTVH, and Bybata.</p>
+              <p>• Multi-Industry Designer.</p>
+              <p>• Digital Presence: 54,500+ views and a 605% rise in interactions for iDeliver. TON Sports grew from zero to 1,600+ views.</p>
+            </div>
+          </aside>
+          <section class="wmain">
+            <h2 class="t" style="font-size:clamp(30px,5vw,40px);margin-bottom:32px">LIST OF WORKS</h2>
+            <div class="folders" id="folders"></div>
+          </section>
         </div>
+      </div>
+    </main>
 
-        <div class="footer-links">
+    <main class="page" id="p-proj">
+      <div class="wrap case" id="proj" style="display:grid;gap:28px"></div>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div>
+          <h2>Shadrach’s<br>Portfolio</h2>
+          <p class="tg" id="tag"></p>
+        </div>
+        <div class="ls">
           <a href="#about">About me</a>
           <a href="#works">My works</a>
         </div>
-
-        <div>
-          <p class="footer-label">Let’s connect</p>
-          <div id="socials" class="socials" aria-label="Social links"></div>
+        <div class="cn">
+          <span>Let’s connect</span>
+          <div class="soc" data-soc></div>
         </div>
       </div>
     </footer>
+  </div>
 
-    <script src="js/data.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+  <script>
+    (function(){
+      var TAGS = {
+        about: 'Good design is as little design as possible.',
+        def: 'Design is not just what it looks like and feels like. Design is how it works.'
+      };
+      var SOC = '<a class="ig" href="https://www.instagram.com/klyr.wrk" target="_blank" rel="noopener" aria-label="Instagram">IG</a><a class="gm" href="https://mail.google.com/mail/?view=cm&to=archibongshadrach@gmail.com" target="_blank" rel="noopener" aria-label="Gmail">✉</a><a class="li" href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>';
+      document.querySelectorAll('[data-soc]').forEach(function(e){ e.innerHTML = SOC; });
+
+      function ph(src, ratio, label, cls) {
+        return '<div class="ph ' + (cls || '') + '" style="aspect-ratio:' + ratio + '" data-l="' + label + '"><img src="images/' + src + '" alt="" loading="lazy" onerror="this.remove()"></div>';
+      }
+
+      var P = {
+        ideliver: {
+          t: 'iDELIVER',
+          k: 'ideliver',
+          s: 'iDeliver required greater visibility and orders. By creating a consistent, user-focused look for campaigns, I achieved over 54,500 views, 754 link clicks, and a 605% rise in interactions.',
+          m: ['Brand Design', 'Lead Designer'],
+          c: ['#f9a404', '#1d1d1d', '#f5e5c6', '#1d1d1d'],
+          kind: 'ig',
+          h: 'iDeliver',
+          d: ['Apr 2026', 'Campaign', 'Brand growth'],
+          prev: null,
+          next: 'ton'
+        },
+        ton: {
+          t: 'TON Sports',
+          k: 'ton',
+          s: 'TON Sports needed stronger visibility and audience engagement. By creating football-focused graphics and matchday content, I helped generate 1.6K views, reach 546 unique users, and improve engagement through a sharper visual identity.',
+          m: ['Matchday Creative', 'Art Direction'],
+          c: ['#ed1b24', '#fff', '#ffe7e7', '#1d1d1d'],
+          kind: 'tw',
+          h: 'TON Sports',
+          d: [['May 2026', 'Football first'], ['Jun 2026', 'Matchday pulse'], ['Jul 2026', 'Fans love it']],
+          prev: 'ideliver',
+          next: 'kvltvh'
+        },
+        kvltvh: {
+          t: 'KVLTVH',
+          k: 'kvltvh',
+          s: 'KVLTVH aimed to amplify emerging artists through music promotion and entertainment content. By creating engaging graphics and consistent social media posts, I helped build cultural visibility and sustained audience interaction.',
+          m: ['Campaign Design', 'Lead Design'],
+          c: ['#ffcc00', '#1d1d1d', '#fff3bf', '#1d1d1d'],
+          kind: 'xt',
+          h: 'KVLTVH',
+          d: ['Artist spotlight', 'Event promo', 'Culture x sound'],
+          prev: 'ton',
+          next: 'bybata'
+        },
+        bybata: {
+          t: 'Bybata',
+          k: 'bybata',
+          s: 'BYBATA needed a clear, engaging brand identity to communicate its mission. Through user-focused visual design and brand communication, I helped present its vision of building better digital experiences with clarity and confidence.',
+          m: ['Brand Identity', 'Design Lead'],
+          c: ['#704daf', '#fff', '#efe7ff', '#1d1d1d'],
+          kind: 'xt',
+          h: 'Bybata',
+          d: ['Brand story', 'Launch promo', 'Digital identity'],
+          prev: 'kvltvh',
+          next: 'other'
+        },
+        other: {
+          t: 'Other Projects',
+          k: 'other',
+          s: 'Across projects like Truefit Atelier, UNIPOD, and Sakai, I created brand-focused visuals, social media designs, print flyers, and restaurant marketing assets to help diverse businesses stand out.',
+          m: ['Mixed Assets', 'Creative Support'],
+          c: ['#d8d0a8', '#1d1d1d', '#f0ebdb', '#1d1d1d'],
+          kind: 'ig',
+          h: 'Creative Work',
+          d: ['Brand identity', 'Menu design', 'Print assets'],
+          prev: 'bybata',
+          next: null
+        }
+      };
+
+      function post(p, i) {
+        var n = i + 1;
+        var img = ph(p.k + '-' + n + '.jpg', '1/1', 'images/' + p.k + '-' + n + '.jpg');
+
+        if (p.kind === 'ig') {
+          return '<div class="ig"><div class="h"><i class="av"></i>' + p.h + '<span>•••</span></div>' + img + '<div class="i">♥ ◯ ➤<em>⚑</em></div><div class="c"><b>' + p.h + '</b><small>' + p.d[i] + '</small></div></div>';
+        }
+
+        if (p.kind === 'tw') {
+          var d = p.d[i];
+          return '<div class="tw"><div class="h"><i class="av"></i><div><b>TON Sports</b><small>' + d[0] + ' • 🌍</small></div></div>' + ph(p.k + '-' + n + '.jpg', '386/450', 'images/' + p.k + '-' + n + '.jpg') + '<div class="s"><span>❤ ' + (18 + i * 4) + '</span><span>💬 ' + (7 + i * 3) + '</span><span>↻ ' + (5 + i * 2) + '</span></div></div>';
+        }
+
+        return '<div class="xt"><div class="h"><i class="av"></i><div><b>' + p.h + ' ✓</b><small>@' + p.k.toLowerCase() + '</small></div></div>' + ph(p.k + '-' + n + '.jpg', '353/444', 'images/' + p.k + '-' + n + '.jpg') + '<div class="t">' + p.d[i] + '</div><div class="c">Creative direction · Design system</div></div>';
+      }
+
+      function render(h) {
+        var p = P[h], o = '', c = p.c;
+        o += '<a class="back" href="#works">← All works</a><div class="chead"><div><h1>' + p.t + '</h1><p class="lead">' + p.s + '</p></div><div class="meta">';
+        o += '<div style="background:' + c[0] + ';color:' + c[1] + '"><small>DELIVERABLES</small>' + p.m[0] + '</div>';
+        o += '<div style="background:' + c[2] + ';color:' + c[3] + '"><small>ROLE</small>' + p.m[1] + '</div>';
+        o += '</div></div>';
+
+        if (p.sec) {
+          var k = 1;
+          p.sec.forEach(function(s){
+            o += '<div class="sech">' + s[0] + '</div><div class="imgs' + (s[2] > 1 ? ' two' : '') + '">';
+            s[1].forEach(function(r){ o += ph('other-' + k + '.jpg', r[0], 'images/other-' + k + '.jpg'); k++; });
+            o += '</div>';
+          });
+        } else {
+          o += '<div class="posts">';
+          for (var i = 0; i < 6; i++) o += post(p, i);
+          o += '</div>';
+        }
+
+        o += '<div class="cr"><small>CREDITS</small><p>Art Direction · Lead Design · Support Design</p></div>';
+        o += '<div class="pager">' + (p.prev ? '<a href="#' + p.prev + '"><i>‹</i>Previous Page</a>' : '<span></span>') + (p.next ? '<a href="#' + p.next + '">Next Page<i>›</i></a>' : '<span></span>') + '</div>';
+        document.getElementById('proj').innerHTML = o;
+      }
+
+      var F = [
+        ['ideliver','iDELIVER','Branding','2026','#f9a404'],
+        ['ton','TON SPORTS','Branding','2026','#ed1b24'],
+        ['kvltvh','KVLTVH','Branding','2024','#ffcc00'],
+        ['bybata','BYBATA','Branding','2026','#704daf']
+      ];
+
+      document.getElementById('folders').innerHTML = F.map(function(f){
+        return '<a class="fold" href="#' + f[0] + '"><div class="f"><i class="tab"></i><i class="back"></i><i class="paper"></i><i class="front"></i><i class="tag" style="background:' + f[4] + '">' + f[2] + '</i></div><h3>' + f[1] + '</h3><p>' + f[3] + '</p></a>';
+      }).join('');
+
+      function route(){
+        var h = (location.hash || '#home').slice(1);
+        if (h !== 'home' && h !== 'about' && h !== 'works' && !P[h]) h = 'home';
+        var pg = P[h] ? 'proj' : h;
+
+        ['home','about','works','proj'].forEach(function(x){
+          document.getElementById('p-' + x).classList.toggle('on', x === pg);
+        });
+
+        if (P[h]) render(h);
+        document.getElementById('shell').hidden = (h === 'home');
+        document.getElementById('tag').textContent = TAGS[h] || TAGS.def;
+        document.querySelectorAll('nav a').forEach(function(a){
+          a.classList.toggle('on', a.dataset.n === (P[h] ? 'works' : h));
+        });
+        window.scrollTo(0, 0);
+      }
+
+      window.addEventListener('hashchange', route);
+      route();
+    })();
+  </script>
+</body>
 </html>
